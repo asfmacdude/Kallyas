@@ -32,7 +32,7 @@ $body_html .= '</body>'.LINE1;
 	
 	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
 	[-JS_FILES_TOP-]
-	<script>window.jQuery || document.write('<script src="themes/Kallyas/js/jquery-1.8.2.min.js">\x3C/script>')</script>
+	<script>window.jQuery || document.write('<script src="{{THEME_URL}}js/jquery-1.8.2.min.js">\x3C/script>')</script>
 	
 	<link rel="shortcut icon" href="/files/images/favicon/asff_favicon.ico">
 	
