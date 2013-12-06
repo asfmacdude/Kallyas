@@ -216,8 +216,7 @@ class kallyas_assets
 			'ID'   => 'COUNTDOWNCUSTOM',
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/countdown.custom.js');
-			
+			'PATH' => $theme . '/js/countdown.custom.js');		
 		$js_array[] = array(
 			'ID'   => 'CYCLE',
 			'KEY'  => 'JS_FILES',

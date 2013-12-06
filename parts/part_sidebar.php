@@ -11,6 +11,9 @@ $sidebar_type = (isset($options['sidebar'])) ? $options['sidebar'] : 'sidebar-le
 $menu_specs['TYPE'] = 'menu';
 $menu_specs['NAME'] = 'Sidebar Menu';
 
+$prog_specs['TYPE'] = 'menu';
+$prog_specs['NAME'] = 'Sidebar Program Menu';
+
 $banr_specs['TYPE']           = 'banner';
 $banr_specs['SETUP_TITLE']    = 'Social-240_71';
 $banr_specs['UL_ID']          = 'Social-240_71';
@@ -26,6 +29,11 @@ $ad_specs['UL_ID']          = 'GeneralAds-240_240';
 	
 	<div class="widget">
 		<?php echo wed_getPresentation($banr_specs); ?>
+	</div><!-- end widget -->
+	
+	<div class="widget">
+		<h4 class="title">Other Programs...</h4>
+		<?php echo wed_getPresentation($prog_specs); ?>
 	</div><!-- end widget -->
 	
 	<div class="widget">

@@ -32,10 +32,6 @@
 				
 				[slogan code="slogan_asfmore" /]
 
-				<hr>
-				
-				[search code="Kallyas-sortable" search_type="FeatureList" call="feature" /]
-
 			</div><!-- end span9 -->
 
 			<div class="span3">
