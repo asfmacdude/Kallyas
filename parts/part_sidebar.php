@@ -14,21 +14,38 @@ $menu_specs['NAME'] = 'Sidebar Menu';
 $prog_specs['TYPE'] = 'menu';
 $prog_specs['NAME'] = 'Sidebar Program Menu';
 
+/*
 $banr_specs['TYPE']           = 'banner';
 $banr_specs['SETUP_TITLE']    = 'Social-240_71';
 $banr_specs['UL_ID']          = 'Social-240_71';
+*/
 
 $ad_specs['TYPE']           = 'banner';
 $ad_specs['SETUP_TITLE']    = 'GeneralAds-240_240';
 $ad_specs['UL_ID']          = 'GeneralAds-240_240';
 
+$animator  = $walt->getImagineer('animation');
+
+$social = array(
+	'SLIDER_ID'      => 'social',
+	'COMPONENT'      => 'layerslider',
+	'STYLE'          => 'small_slider',
+	'ANIMATION_TYPE' => 'CREATIVE',
+	'CELLS'          => array('facebook_small','youtube_small','twitter_small'),
+	'IMAGE_SIZE'     => '240_71',
+	'SLIDER_HEIGHT'  => '71px'
+);
+
+$animator->newAnimationByCode($social);
+
+$social_html = $animator->getHTML(array('SLIDER_ID' => 'social'));
 
 ?>
 
 <div id="sidebar" class="<?php echo $sidebar_type; ?>">							
 	
 	<div class="widget">
-		<?php echo wed_getPresentation($banr_specs); ?>
+		<?php echo $social_html; ?>
 	</div><!-- end widget -->
 	
 	<div class="widget">

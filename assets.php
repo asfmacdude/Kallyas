@@ -52,21 +52,20 @@ class kallyas_assets
 			'ID'   => 'JQUERY',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES_TOP',
-			'TYPE' => 'LIST',
-			'TAG'  => 'JQUERY',
-			'VERSION' => '1.10.1');
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'jquery/jquery.js');
 		$js_array[] = array(
 			'ID'   => 'JQUERY-MIGRATE',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES_TOP',
-			'TYPE' => 'LIST',
-			'TAG'  => 'JQUERY-MIGRATE');
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'jquery/jquery.migrate.js');
 		$js_array[] = array(
 			'ID'   => 'MODERN',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES_TOP',
-			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/modernizr.js');
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'modernizr.js');
 		$js_array[] = array(
 			'ID'   => 'GOOGLE',
 			'LOAD' => false,
@@ -128,6 +127,7 @@ class kallyas_assets
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/js/load_iosslider.js');
+/*
 		$js_array[] = array(
 			'ID'   => 'LSLIDEREASING',
 			'KEY'  => 'JS_FILES',
@@ -152,7 +152,8 @@ class kallyas_assets
 			'ID'   => 'LSLIDERREADY',
 			'KEY'  => 'JS_READY_CODE',
 			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/ready_layerslider.js');			
+			'PATH' => $theme . '/js/ready_layerslider.js');
+*/			
 		$js_array[] = array(
 			'ID'   => 'CAROUSEL',
 			'KEY'  => 'JS_FILES',
@@ -257,9 +258,11 @@ class kallyas_assets
 		$css_array[] = array(
 			'ID'    => 'IOSSLIDER',
 			'PATH'  => $theme .'/sliders/iosslider/style.css');
-		$css_array[] = array(
+		/*
+$css_array[] = array(
 			'ID'    => 'LAYERSLIDER',
 			'PATH'  => $theme .'/layerslider/css/layerslider.css');
+*/
 		$css_array[] = array(
 			'ID'    => 'CUSTOM',
 			'LOAD'  =>  true,

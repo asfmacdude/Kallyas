@@ -49,4 +49,27 @@ function getMenuWelcome()
 	return $menu;
 }
 
+function getRandomColorClass()
+{
+	$colors = array(
+		'dark-blue',
+		'normal-blue',
+		'light-blue',
+		'dark-red',
+		'normal-red',
+		'light-red',
+		'dark-green',
+		'normal-green',
+		'light-green',
+		'dark-gray',
+		'normal-gray',
+		'light-gray',
+		'yellow',
+		'purple'
+	);
+
+	$x = rand(0,13);
+	return $colors[$x];
+}
+
 ?>
