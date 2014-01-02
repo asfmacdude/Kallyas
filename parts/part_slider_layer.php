@@ -1,7 +1,6 @@
 <?php
 defined( '_GOOFY' ) or die();
 
-
 $call_parts = wed_getSystemValue('CALL_PARTS');
 
 if (isset($call_parts[1]))
@@ -15,6 +14,16 @@ elseif (!empty($call_parts[0]))
 else
 {
 	$catg = 'homepage';
+}
+
+$holiday = array(
+	'start_date' => '12/1/2013',
+	'end_date'   => '1/2/2014'
+);
+
+if (wed_getMomentInTime($holiday))
+{
+	// Randomize $catg	
 }
 
 $animator  = $walt->getImagineer('animation');

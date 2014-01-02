@@ -1,9 +1,5 @@
 <?php
 defined( '_GOOFY' ) or die();
-
-$title_obj   = wed_getContentInfo("title_bar_heading");
-$title       = $title_obj->getValue('fullarticle');
-$header_html = '<h4 class="text">' . $title . '</h4>';
 	
 ?>
 
@@ -11,7 +7,7 @@ $header_html = '<h4 class="text">' . $title . '</h4>';
 	<div class="container">
 		<div class="row">
 			<div class="span8">
-				<?php echo $header_html; ?>
+				<h4 class="text">[presentation type="content" code="title_bar_heading" format="snippet" /]</h4>
 			</div>
 			<div class="span4 align-center">
 				<a href="https://www.alagames.com/forms_lib/index.php?form=volun-register2012" class="btn">Volunteer</a>

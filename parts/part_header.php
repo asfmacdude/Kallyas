@@ -7,6 +7,7 @@ if (!wed_loggedIn())
 {
 	$login_menu = '<li><a href="#" onclick="toggleSupportPanels(\'login_panel\',160)">LOGIN</a></li>';
 }
+
 ?>
 
 
@@ -30,9 +31,11 @@ if (!wed_loggedIn())
 						<ul class="inner">
 							<li class="active"><a href="{{STATE_GAMES_LINK}}">Alabama State Games <span class="icon-ok"></span></a></li>
 							<li><a href="{{WEE_LINK}}">Wee Can Fight Obesity</a></li>
-							<li><a href="{{STUDENT_LINK}}">Student Ambassadors</a></li>
-							<li><a href="{{SENIOR_GAMES_LINK}}">Senior State Games</a></li>
 							<li><a href="{{HEROES_LINK}}">Honoring Our Heroes</a></li>
+							<li><a href="{{SCHOLARSHIP_LINK}}">Academic Scholarships</a></li>
+							<li><a href="{{STUDENT_LINK}}">Student Ambassadors</a></li>
+							<li><a href="{{AOY_LINK}}">Athlete of the Year</a></li>
+							<li><a href="{{HEALING_LINK}}">Healing Hands Award</a></li>					
 						</ul>
 					</div>
 				</li>

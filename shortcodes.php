@@ -503,7 +503,7 @@ function sc_getCountdown($options=array(), $content='')
 	
 	if (!is_null($countdown_date))
 	{
-		$style = '<style>#Counter li {list-style: none;float: left;line-height: 30px;padding: 0px 8px 0px 0px;font-size: %FONT-SIZE%]];}#Counter li.timer_title {margin-right: 10px;}</style>';
+		$style = '<style>#Counter {float:right;} #Counter li {list-style: none;float: left;line-height: 30px;padding: 0px 8px 0px 0px;font-size: %FONT-SIZE%]];}#Counter li.timer_title {margin-right: 10px;}</style>';
 		$style = str_replace('%FONT-SIZE%', $font_size, $style);
 		
 		$script = 'counter.init("' . $countdown_date . '","' . $title . '");';
