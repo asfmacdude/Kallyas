@@ -74,6 +74,13 @@ Custom Headers
 	padding-top: 10px;
 }
 
+#results {
+	max-height:600px;
+	overflow:auto;
+	background-color:#ddd;
+	padding:5px;
+}
+
 #results li {
 	list-style: none;
 }
