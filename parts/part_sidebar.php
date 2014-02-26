@@ -44,9 +44,9 @@ $social_html = $animator->getHTML(array('SLIDER_ID' => 'social'));
 
 <div id="sidebar" class="<?php echo $sidebar_type; ?>">							
 	
-	<div class="widget">
+	<div>
 		<?php echo $social_html; ?>
-	</div><!-- end widget -->
+	</div>
 	
 	<div class="widget">
 		<h4 class="title">Other Programs...</h4>

@@ -18,7 +18,7 @@ defined( '_GOOFY' ) or die();
 include_once('shortcodes.php');
 include_once('functions.php');
 
-class kallyas_assets
+class kallyas_assets extends wed_theme_tools
 {
 	public $options   = array();
 	
@@ -33,8 +33,6 @@ class kallyas_assets
 		$this->options['CLASS_NAME']  = __CLASS__;
 		$this->options['LOCAL_PATH']  = dirname(__FILE__);
 		$this->options['THEME']       = 'Kallyas';
-		
-		$this->pushOptions();
 	}
 	
 	public function pushOptions()
