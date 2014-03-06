@@ -22,7 +22,7 @@ if (!wed_loggedIn())
 						<span class="icon-remove-circle icon-white"></span> CONTACT US
 					</a>
 				</li>
-				<?php echo($login_menu); ?>
+				<!-- LOGIN MENU WAS HERE -->
 			</ul><!-- end topnav // right aligned -->
 
 			<ul class="topnav navLeft">

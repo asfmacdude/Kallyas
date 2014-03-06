@@ -33,7 +33,14 @@ body.boxed #page_wrapper {width:1200px; border-left: 3px solid #fff; border-righ
 .fade {opacity: 0; -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
 .fade.in { opacity: 1; }
 
+/* Updates 1.2 */
 
-@media (max-width: 767px) {
-	.chaser {display:none !important;}
-}
+#action_box {max-height: 100px;}
+#twitterFeed .timePosted {display:inline-block; color:#9d9d9d; padding-left:10px; border-left:1px solid #707070; font-size:11px; position:absolute; right: 15px; top: 15px; bottom: 15px; width: 45px; vertical-align: middle;line-height: 1;}
+#sidebar ul.menu li > ul {list-style:none;}
+
+/* activate sidebar submenu show animation - simply uncomment these 2 rules below:
+#sidebar ul.menu li > ul {height:0; overflow:hidden; -webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; transition: all 0.2s ease-out;}
+#sidebar ul.menu li:hover > ul {display: block; height:200px;}
+*/
+

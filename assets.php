@@ -98,12 +98,19 @@ class kallyas_assets extends wed_theme_tools
 			'ID'   => 'SUPERFISH',
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
+			'PATH' => $theme . '/addons/superfish_responsive/superfish_menu.js');
+		/*
+$js_array[] = array(
+			'ID'   => 'SUPERFISH',
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'FILE',
 			'PATH' => $theme . '/addons/superfish_responsive/superfish.js');
 		$js_array[] = array(
 			'ID'   => 'SUPERFISHSUBS',
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/addons/superfish_responsive/supersubs.js');
+*/
 		$js_array[] = array(
 			'ID'   => 'PRETTY',
 			'LOAD' => true,
@@ -245,7 +252,7 @@ class kallyas_assets extends wed_theme_tools
 		$css_array[] = array(
 			'ID'    => 'RESPONSIVE',
 			'LOAD'  =>  true,
-			'PATH'  => $theme . '/css/responsive.css');
+			'PATH'  => $theme . '/css/responsive-devices.css');
 		$css_array[] = array(
 			'ID'    => 'SUPERFISH',
 			'PATH'  => $theme . '/addons/superfish_responsive/superfish.css');

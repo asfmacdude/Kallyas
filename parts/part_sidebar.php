@@ -33,7 +33,8 @@ $social = array(
 	'ANIMATION_TYPE' => 'CREATIVE',
 	'CELLS'          => array('facebook_small','youtube_small','twitter_small'),
 	'IMAGE_SIZE'     => '240_71',
-	'SLIDER_HEIGHT'  => '71px'
+	'SLIDER_HEIGHT'  => '71px',
+	'SLIDER_WIDTH'   => '240px'
 );
 
 $animator->newAnimationByCode($social);
@@ -42,10 +43,19 @@ $social_html = $animator->getHTML(array('SLIDER_ID' => 'social'));
 
 ?>
 
+
 <div id="sidebar" class="<?php echo $sidebar_type; ?>">							
 	
-	<div>
+	<div class="widget">
 		<?php echo $social_html; ?>
+	</div>
+	
+	<div class="widget">
+		<a href="http://asffoundation.net/about/asffoundation" class="hover-box centered fixclear">
+			<h3>ASF Foundation</h3>
+			<h4>What is the ASF Foundation?</h4>
+			<p>Watch the new video, "We Mentor. We Lead. We Impact."</p>
+		</a>
 	</div>
 	
 	<div class="widget">
