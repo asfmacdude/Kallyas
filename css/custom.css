@@ -54,13 +54,45 @@ Alternate Breadcrumb styling
 	color:#969696;
 }
 
+/*
+Red Hover-box
+*/
+
+.hover-box-red {display:block; padding:15px; background:#cd2122; border:1px solid rgba(0,0,0,0.4); color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,0.5); border-radius:3px;}
+.hover-box-red:hover {background:#2980B9; color:#fff;}
+.hover-box-red.centered {text-align:center;}
+.hover-box-red > img {float:left; margin: 15px 15px 8px 10px;}
+.hover-box-red > h3 {line-height: 1.1; margin-top:0;}
+.hover-box-red > h4 {line-height: 1.1; margin-top:0;}
+.hover-box-red > p {margin-bottom:0;line-height: 1.1;}
+
+/*
+Green Hover-box
+*/
+
+.hover-box-green {display:block; padding:15px; background:#51a351; border:1px solid rgba(0,0,0,0.4); color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,0.5); border-radius:3px;}
+.hover-box-green:hover {background:#969696; color:#fff;}
+.hover-box-green.centered {text-align:center;}
+.hover-box-green > img {float:left; margin: 15px 15px 8px 10px;}
+.hover-box-green > h3 {line-height: 1.1; margin-top:0;}
+.hover-box-green > h4 {line-height: 1.1; margin-top:0;}
+.hover-box-green > p {margin-bottom:0;line-height: 1.1;}
+
+
+
 
 
 /*
 Custom Headers
 */
-#page_header .bgback.asff_logo {background:url(../../../files/images/headers/1920_301/asff_logo.jpg) no-repeat center top;}
+#page_header .bgback.asff_logo {
+	background:url(../../../files/images/headers/1920_301/asff_logo.jpg) no-repeat center top;
+	border-bottom:1px solid #fff;
+}
 
+#page_header {
+	border-bottom:1px solid #fff;
+}
 
 .account {
 	margin-bottom: 10px;

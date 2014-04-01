@@ -15,7 +15,7 @@ $img_obj = wed_getImageObject($img_options);
 
 <div class="row partners_carousel">
 	<div class="span2">
-		<h3 class="m_title" style="line-height:1.1;"><span>ASF Foundation Partners</span></h3>
+		<h3 class="m_title" style="line-height:1.1;"><span>ASF Foundation Patrons</span></h3>
 		<div class="controls">
 			<a href="#" class="prev"><span class="icon-chevron-left"></span></a>
 			<a href="#" class="next"><span class="icon-chevron-right"></span></a>

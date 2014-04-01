@@ -2,6 +2,7 @@
 defined( '_GOOFY' ) or die();
 
 $background = (isset($options['background'])) ? $options['background'] : 'asff_logo' ;
+$shadow     = (isset($options['shadow'])) ? $options['shadow'] : 'yes' ;
 ?>
 
 
@@ -23,5 +24,7 @@ $background = (isset($options['background'])) ? $options['background'] : 'asff_l
 		</div><!-- end row -->
 	</div>
 	
+	<?php if ($shadow=='yes') { ?>
 	<div class="shadowUP"></div>
+	<?php } ?>
 </div><!-- end page_header -->

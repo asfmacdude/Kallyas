@@ -25,7 +25,7 @@ defined( '_GOOFY' ) or die();
 				<div class="contact-details">
 					<h3 class="m_title">GET IN TOUCH</h3>
 					<p><strong>(800) 467-0422</strong><br />
-					<strong>(334) 280-00065</strong><br />
+					<strong>(334) 280-0065</strong><br />
 					Email: <span class="cloaked" title="com|alagames|sports::true"></p>
 					<p>ASF Foundation, Inc.<br />
 					Mailing: <br />

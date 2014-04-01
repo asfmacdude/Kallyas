@@ -1,37 +1,36 @@
 <?php
 /*
- * Sport_Page
+ * info
  *
- * This template has a content view on the left with a sidebar menu on the right.
+ * This template has a content view on the left with a sidebar menu on the right with a static header.
  *
  */
 ?>
-   
+
+
 {[parts/part_supportpanel.php]}
 
 <div id="page_wrapper">
 
 	{[parts/part_header.php]}
 	
-	{[parts/part_slider_layer.php]}
+	{[parts/part_static_header.php:shadow=no]}
 	
-	{[parts/part_actionbox.php]}
+	{[parts/part_countdown_register.php]}
 
 	<section id="content">
 	
 		<div class="container">
-			
-			[presentation type="content" code="URL_registerbuttons" format="snippet" show_error=0 /]
-			
+
 			<div class="row">
-	
+
 				<div class="span9">
 					
-					[breadcrumb version="lite" /]
-					
-					<div style="clear:both;"></div>
-					
 					%CONTENT%
+					
+					<hr>
+					
+					[slogan code="slogan_asfmore" /]
 
 				</div><!-- end span9 -->
 

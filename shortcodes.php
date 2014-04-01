@@ -28,6 +28,7 @@ $codes['results']              = 'sc_showResults';
 $codes['countdown']            = 'sc_getCountdown';
 $codes['breadcrumb']           = 'sc_getBreadcrumb';
 $codes['gallery_sampler']      = 'sc_getGallerySampler';
+$codes['hoverbox']             = 'sc_getHoverBox';
 
 global $walt;
 $short = $walt->getImagineer('shortcodes');
@@ -65,10 +66,13 @@ function sc_getRowWrapper($options=array(), $content='')
 {
 	$html = '';
 	
-	$html .= '<div class="row">'.LINE2;
-	$html .= $content;
-	$html .= '</div><!-- end row -->'.LINE2;
-	
+	if (wed_getMomentInTime($options))
+	{
+		$html .= '<div class="row">'.LINE2;
+		$html .= $content;
+		$html .= '</div><!-- end row -->'.LINE2;
+	}
+
 	return $html;
 }
 
@@ -348,7 +352,7 @@ function sc_getRegisterButton($options=array(), $content='')
 		return null;
 	}
 	
-	if (!wed_getMomentInTime($start,$end))
+	if (!wed_getMomentInTime($options))
 	{
 		$html .= '<h4>'.'Online Registration is Closed for '.$sport.'.</h4>'.LINE1;
 		$html .= '<p>The deadline date for registration has passed. Please contact our office for more information.</p>';
@@ -363,12 +367,12 @@ function sc_getRegisterButton($options=array(), $content='')
 	
 	// list should be formatted: 'Under 8|33;Under 12|44;Under 14|22'
 	$list_of_events = explode(';', $list);
-	$link           = 'http://208.106.191.140/html/alabama/registrationStep0.asp?action=&sportID=';
+	$link           = 'http://208.106.176.137/html/alabama/registrationStep0.asp?action=&sportID=';
 	
 	foreach ($list_of_events as $event)
 	{
 		$split = explode('|', $event);
-		$html .= '<p class="register" ><a href="'.$link.$split[1].'"><button class="btn btn-primary" type="button">Register Online</button></a> '.$split[0].'</p>'.LINE1;
+		$html .= '<p class="register" ><a href="'.$link.$split[1].'"><button class="btn btn-primary" type="button" style="width:50%;">Register Online - '.$split[0].'</button></a></p>'.LINE1;
 	}
 	
 	return $html;	
@@ -408,7 +412,7 @@ function sc_getRegisterMailButton($options=array(), $content='')
 		You only need to submit one Team Entry Form. Clip out the Registration Chart and Official Entry Form(s) and mail with Entry Fee to:</p>'.LINE1;
 		
 	$html .= '<address>';
-	$html .= 'Alabama Sports Festival<br>'.LINE1;
+	$html .= 'ASF Foundation<br>'.LINE1;
 	$html .= 'P.O. Box 20327<br>'.LINE1;
 	$html .= 'Montgomery, AL 36120<br>'.LINE1;
 	$html .= '</address>';
@@ -424,7 +428,7 @@ function sc_getRegisterMailButton($options=array(), $content='')
 		
 		if (file_exists($path))
 		{
-			$html .= '<p class="register" ><a href="'.$path_web.'"><button class="btn btn-success" type="button">Download Packet</button></a> '.$split[0].'</p>'.LINE1;
+			$html .= '<p class="register" ><a href="'.$path_web.'"><button class="btn btn-success" type="button" style="width:50%;">Download Packet - '.$split[0].'</button></a></p>'.LINE1;
 		}
 	}
 	
@@ -495,6 +499,11 @@ function sc_showResults($options=array(), $content='')
 
 function sc_getCountdown($options=array(), $content='')
 {
+	if (!wed_getMomentInTime($options))
+	{
+		return null;
+	}
+	
 	$html = '';
 	
 	$title           = (isset($options['title'])) ? $options['title'] : 'Countdown' ;
@@ -574,6 +583,29 @@ function sc_getGallerySampler($options=array(), $content='')
 	
 	// Here we actually call the shortcode function for just gallery
 	return sc_galleryPresentation($options, $content);
+}
+
+function sc_getHoverBox($options=array(), $content='')
+{
+	// Produces the boxes that turn red when you hopver over them
+	$html = '';
+	
+	if (wed_getMomentInTime($options))
+	{
+		$link     = (isset($options['link'])) ? $options['link'] : '#' ;
+		$image    = (isset($options['image'])) ? $options['image'] : 'checkbox.png' ;
+		$title    = (isset($options['title'])) ? $options['title'] : 'Announcing!' ;
+		$subtitle = (isset($options['subtitle'])) ? $options['subtitle'] : '{{GROUP_TITLE}}' ;
+		$span     = (isset($options['span'])) ? $options['span'] : '4' ;
+		
+		$image_path = '/files/images/icons/60_60/'.$image;
+		$span_class = 'span'.$span;
+		
+		$html  = '<div class="'.$span_class.'"><a href="'.$link.'" class="hover-box-green fixclear"><img src="'.$image_path.'" alt=""><h3>'.$title.'</h3>
+	<h4>'.$subtitle.'</h4><p>'.$content.'</p></a></div>';
+	}
+
+	return $html;
 }
 
 
