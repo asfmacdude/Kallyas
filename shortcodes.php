@@ -3,38 +3,39 @@
 * shortcodes.php
 *
 * shortcode functions for Kallyas Theme
+* Use the prefix kly_ for all functions to prevent conflicts
 *
 *
 */
 
 $codes = array();
-$codes['page_wrapper']         = 'sc_getPageWrapper';
-$codes['content']              = 'sc_getContentWrapper';
-$codes['row']                  = 'sc_getRowWrapper';
-$codes['grid']                 = 'sc_getGridWrapper';
-$codes['column']               = 'sc_getColumn';
-$codes['carousel']             = 'sc_getCarousel';
-$codes['sidebar']              = 'sc_getSideBar';
-$codes['tagline']              = 'sc_getTagLine';
-$codes['info_box']             = 'sc_getInfoBox';
-$codes['feature_row']          = 'sc_getFeatureRow';
-$codes['circle_more']          = 'sc_getCircleMore';
-$codes['slogan']               = 'sc_getSlogan';
-$codes['register_button']      = 'sc_getRegisterButton';
-$codes['register_mail_button'] = 'sc_getRegisterMailButton';
-$codes['show_map']             = 'sc_showMap';
-$codes['button']               = 'sc_showButton';
-$codes['results']              = 'sc_showResults';
-$codes['countdown']            = 'sc_getCountdown';
-$codes['breadcrumb']           = 'sc_getBreadcrumb';
-$codes['gallery_sampler']      = 'sc_getGallerySampler';
-$codes['hoverbox']             = 'sc_getHoverBox';
+$codes['page_wrapper']         = 'kly_getPageWrapper';
+// $codes['content']              = 'kly_getContentWrapper';
+$codes['row']                  = 'kly_getRowWrapper';
+$codes['grid']                 = 'kly_getGridWrapper';
+$codes['column']               = 'kly_getColumn';
+$codes['carousel']             = 'kly_getCarousel';
+$codes['sidebar']              = 'kly_getSideBar';
+$codes['tagline']              = 'kly_getTagLine';
+$codes['info_box']             = 'kly_getInfoBox';
+$codes['feature_row']          = 'kly_getFeatureRow';
+$codes['circle_more']          = 'kly_getCircleMore';
+$codes['slogan']               = 'kly_getSlogan';
+$codes['register_button']      = 'kly_getRegisterButton';
+$codes['register_mail_button'] = 'kly_getRegisterMailButton';
+$codes['show_map']             = 'kly_showMap';
+$codes['button']               = 'kly_showButton';
+$codes['results']              = 'kly_showResults';
+$codes['countdown']            = 'kly_getCountdown';
+$codes['breadcrumb']           = 'kly_getBreadcrumb';
+$codes['gallery_sampler']      = 'kly_getGallerySampler';
+$codes['hoverbox']             = 'kly_getHoverBox';
 
 global $walt;
 $short = $walt->getImagineer('shortcodes');
 $short->add_shortcodes_array($codes);
 
-function sc_getPageWrapper($options=array(), $content='')
+function kly_getPageWrapper($options=array(), $content='')
 {
 	$html = '';
 	
@@ -45,7 +46,7 @@ function sc_getPageWrapper($options=array(), $content='')
 	return $html;
 }
 
-function sc_getContentWrapper($options=array(), $content='')
+function kly_getContentWrapper($options=array(), $content='')
 {
 	$theme = wed_getSystemValue('THEME');
 	$file  = THEME_BASE . $theme . DS .'parts/part_content.php';
@@ -62,7 +63,7 @@ function sc_getContentWrapper($options=array(), $content='')
 	return str_replace('%CONTENT%', $content, $html);
 }
 
-function sc_getRowWrapper($options=array(), $content='')
+function kly_getRowWrapper($options=array(), $content='')
 {
 	$html = '';
 	
@@ -76,7 +77,7 @@ function sc_getRowWrapper($options=array(), $content='')
 	return $html;
 }
 
-function sc_getGridWrapper($options=array(), $content='')
+function kly_getGridWrapper($options=array(), $content='')
 {
 	$html = '';
 	
@@ -90,7 +91,7 @@ function sc_getGridWrapper($options=array(), $content='')
 	return $html;
 }
 
-function sc_getColumn($options=array(), $content='')
+function kly_getColumn($options=array(), $content='')
 {
 	$size  = (isset($options['size'])) ? $options['size'] : null ;
 	
@@ -102,7 +103,7 @@ function sc_getColumn($options=array(), $content='')
 	return '<div class="span' . $size . '">' . $content . '</div>';
 }
 
-function sc_getCarousel($options=array(), $content='')
+function kly_getCarousel($options=array(), $content='')
 {
 	$name  = (isset($options['name'])) ? $options['name'] : null ;
 	$theme = wed_getSystemValue('THEME');
@@ -120,7 +121,7 @@ function sc_getCarousel($options=array(), $content='')
 	return $html;
 }
 
-function sc_getSideBar($options=array(), $content='')
+function kly_getSideBar($options=array(), $content='')
 {
 	$theme = wed_getSystemValue('THEME');
 	$file  = THEME_BASE . $theme . DS .'parts/part_sidebar.php';
@@ -138,7 +139,7 @@ function sc_getSideBar($options=array(), $content='')
 }
 
 // Creates a full width tag line across the page.
-function sc_getTagLine($options=array(), $content='')
+function kly_getTagLine($options=array(), $content='')
 {
 	$html = '';
 	$text = (isset($options['text'])) ? $options['text'] : null ;
@@ -152,7 +153,7 @@ function sc_getTagLine($options=array(), $content='')
 }
 
 
-function sc_getInfoBox($options=array(), $content='')
+function kly_getInfoBox($options=array(), $content='')
 {
 	$html = '';
 	$theme   = wed_getSystemValue('THEME');
@@ -170,7 +171,7 @@ function sc_getInfoBox($options=array(), $content='')
 	return $html;
 }
 
-function sc_getFeatureRow($options=array(), $content='')
+function kly_getFeatureRow($options=array(), $content='')
 {
 	// Images for this feature row are 370 X 200
 	global $walt;
@@ -254,7 +255,7 @@ function sc_getFeatureRow($options=array(), $content='')
 	return '<div class="row image-boxes imgboxes_style1">'.LINE1.$html.'</div>'.LINE1;
 }
 
-function sc_getCircleMore($options=array(), $content='')
+function kly_getCircleMore($options=array(), $content='')
 {
 	$html = '';
 	
@@ -278,7 +279,7 @@ function sc_getCircleMore($options=array(), $content='')
 	return $html;
 }
 
-function sc_getSlogan($options=array(), $content='')
+function kly_getSlogan($options=array(), $content='')
 {
 	$html = '';
 	
@@ -335,10 +336,10 @@ function sc_getSlogan($options=array(), $content='')
 
 //
 //	*****************************************************************
-//	******** sc_getRegisterButton Function **************************
+//	******** kly_getRegisterButton Function **************************
 //	*****************************************************************
 //
-function sc_getRegisterButton($options=array(), $content='')
+function kly_getRegisterButton($options=array(), $content='')
 {
 	$html = '';
 	
@@ -380,10 +381,10 @@ function sc_getRegisterButton($options=array(), $content='')
 
 //
 //	*****************************************************************
-//	******** sc_getRegisterMailButton Function **************************
+//	******** kly_getRegisterMailButton Function **************************
 //	*****************************************************************
 //
-function sc_getRegisterMailButton($options=array(), $content='')
+function kly_getRegisterMailButton($options=array(), $content='')
 {
 	$html = '';
 	
@@ -437,7 +438,7 @@ function sc_getRegisterMailButton($options=array(), $content='')
 
 
 
-function sc_showMap($options=array(), $content='')
+function kly_showMap($options=array(), $content='')
 {
 	$html = '';
 	
@@ -451,7 +452,7 @@ function sc_showMap($options=array(), $content='')
 	return $html;
 }
 
-function sc_showButton($options=array(), $content='')
+function kly_showButton($options=array(), $content='')
 {
 	$html = '';
 	
@@ -486,7 +487,7 @@ function sc_showButton($options=array(), $content='')
 	return $html;
 }
 
-function sc_showResults($options=array(), $content='')
+function kly_showResults($options=array(), $content='')
 {	
 	$sport   = (isset($options['sport'])) ? $options['sport'] : 'ALL' ;
 	$year    = (isset($options['year'])) ? $options['year'] : '2012' ;
@@ -497,7 +498,7 @@ function sc_showResults($options=array(), $content='')
 	return $curlobj->getOutput();
 }
 
-function sc_getCountdown($options=array(), $content='')
+function kly_getCountdown($options=array(), $content='')
 {
 	if (!wed_getMomentInTime($options))
 	{
@@ -545,7 +546,7 @@ function sc_getCountdown($options=array(), $content='')
 	return $html;
 }
 
-function sc_getBreadcrumb($options=array(), $content='')
+function kly_getBreadcrumb($options=array(), $content='')
 {
 	$version = (isset($options['version'])) ? $options['version'] : null ;
 	$class   = (is_null($version)) ? 'breadcrumbs' : 'breadcrumbs_'.$version;
@@ -570,7 +571,7 @@ function sc_getBreadcrumb($options=array(), $content='')
 	return $html;
 }
 
-function sc_getGallerySampler($options=array(), $content='')
+function kly_getGallerySampler($options=array(), $content='')
 {
 	$options['type']      = 'gallery';
 	$options['setup']     = 'gallery_simple';
@@ -582,10 +583,10 @@ function sc_getGallerySampler($options=array(), $content='')
 	$options['show_more'] = true;
 	
 	// Here we actually call the shortcode function for just gallery
-	return sc_galleryPresentation($options, $content);
+	return sys_galleryPresentation($options, $content);
 }
 
-function sc_getHoverBox($options=array(), $content='')
+function kly_getHoverBox($options=array(), $content='')
 {
 	// Produces the boxes that turn red when you hopver over them
 	$html = '';

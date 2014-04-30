@@ -1,16 +1,24 @@
 <?php
 defined( '_GOOFY' ) or die();
 
-$page_code  = wed_getSystemValue('HOME_PAGE_CONTENT');
-$call_parts = wed_getSystemValue('CALL_PARTS');
-$page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
-
 /*
-$body       = wed_getSystemValue('BODY_HTML');
-$body_html  = '<body class="{{BODY_CLASS}}">'.LINE1;
-$body_html .= $body.LINE1;
-$body_html .= '</body>'.LINE1;
-*/
+ * page_events.php
+ *
+ * This setup is for the events category pages.
+ *
+ */
+
+$call_parts = wed_getSystemValue('CALL_PARTS');
+$page_code  = (!empty($call_parts[1])) ? $call_parts[1] : null ;
+
+if (is_null($page_code))
+{
+	$page_html = '[search code="standard_search_list" type="search_urlcall" call="event" heading="Events Listing" /]';
+}
+else
+{
+	$page_html = '[presentation type="content" code="'.$page_code.'" /]';
+}
 
 ?>
 
@@ -75,6 +83,8 @@ $body_html .= '</body>'.LINE1;
 
 	{[parts/part_supportpanel.php]}
 	
+	{[parts/part_login.php]}
+	
 	<div id="page_wrapper">
 	
 		{[parts/part_header.php]}
@@ -86,36 +96,27 @@ $body_html .= '</body>'.LINE1;
 		<section id="content">
 		
 			<div class="container">
-			
-			<div class="row">
-		
-				<div class="span9">
-					
-					[presentation type="content" code="<?php echo $page_code; ?>" /]
-					
-					<hr>
-
-					[presentation type="content" code="news_video_intro" /]
-					[search code="Kallyas-sortable" search_type="FeatureList" call="feature" /]
-					
-					<hr>
-					
-					[slogan code="slogan_asfmore" /]
 	
-				</div><!-- end span9 -->
+				<div class="row">
 	
-				<div class="span3">
+					<div class="span3">
 	
-					{[parts/part_sidebar.php:type=right]}
+						{[parts/part_sidebar.php:type=left]}
+						
+					</div><!-- end span3 -->
 					
-				</div><!-- end span3 -->
+					<div class="span9">
 	
-			</div><!-- end row -->
+						<?php echo $page_html; ?>
 	
-			{[parts/part_partners_carousel.php]}
-					
-			[tagline text="We Mentor. We Lead. We Impact." /]
-			
+					</div><!-- end span9 -->
+	
+				</div><!-- end row -->
+	
+				{[parts/part_partners_carousel.php]}
+				
+				[tagline text="{{SLOGAN}}" /]
+	
 			</div><!-- end container -->
 	
 		</section><!-- end #content -->

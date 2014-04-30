@@ -16,8 +16,4 @@ jQuery(document).ready(function($) {
 		jQuery.fn.prettyPhoto({social_tools: false, deeplinking: false, show_title: false, default_width: 980, theme:'pp_kalypso transparent', opacity: 0.95});
 		jQuery.prettyPhoto.open($(this).attr('href'),'','');
 	});
-	
-	// Hides email addresses from robots
-	$(".cloaked").obfuscate({cssClass: 'email'});
-	
 });
