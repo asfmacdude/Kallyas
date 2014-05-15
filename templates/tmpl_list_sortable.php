@@ -15,7 +15,7 @@ $list_setup['IMAGE_SIZE']       = '370_200';
 // CONTAINER template to wrap entire list
 $list_setup['CONTAINER']    = <<<ENDHTML
 <div class="row hg-portfolio ">
-	<div class="span9">
+	<div>
 		<div class="hg-portfolio-sortable">
 			<div id="sorting" class="fixclear">
 				<span class="sortTitle"> Sort By: </span>
@@ -47,7 +47,7 @@ ENDHTML;
 
 // IMAGE only template which will be inserted into the ITEM
 $list_setup['IMAGE'] = <<<ENDHTML
-<a href="%OBJECT_LINK%" data-rel="prettyPhoto" data-type="%TYPE%" class="hoverLink" >
+<a href="%OBJECT_LINK%" data-rel="prettyPhoto" data-type="%TYPE%" class="hoverLink thumbnail" >
 	<img src="%IMAGE_PATH%" alt="" />
 </a>
 ENDHTML;

@@ -5,11 +5,11 @@ defined( '_GOOFY' ) or die();
 <footer id="footer">
 	<div class="container">
 		<div class="row">
-			<div class="span5">
+			<div class="col-md-5">
 				<h3 class="m_title">MEET OUR STAFF</h3>
 				[article code="info_staff" format="snippet"]
 			</div>
-			<div class="span4">
+			<div class="col-md-4">
 				<div class="newsletter-signup">
 					<h3 class="m_title">NEWSLETTER SIGNUP</h3>
 					<p>By subscribing to our mailing list you will always be update with the latest news from us.</p>
@@ -17,11 +17,11 @@ defined( '_GOOFY' ) or die();
 						<input type="text" name="nl-email" id="nl-email" value="" placeholder="your.address@email.com" />
 						<input type="submit" name="submit" id="nl-submit" value="JOIN US" />
 					</form>
-					<span id="result">Our monthly email newsletter is full of information!</span>
+					<span id="newsltr_result">Our monthly email newsletter is full of information!</span>
 					<p><small>We never spam!</small></p>
 				</div><!-- end newsletter-signup -->
 			</div>
-			<div class="span3">
+			<div class="col-md-3">
 				<div class="contact-details">
 					<h3 class="m_title">GET IN TOUCH</h3>
 					<p><strong>(800) 467-0422</strong><br />
@@ -40,7 +40,7 @@ defined( '_GOOFY' ) or die();
 		</div><!-- end row -->
 		
 		<div class="row">
-			<div class="span6">
+			<div class="col-md-6">
 				<div class="twitter-feed">
 				
 					<!-- twitter feeds -->
@@ -50,7 +50,7 @@ defined( '_GOOFY' ) or die();
 
 				</div><!-- end twitter-feed -->
 			</div>
-			<div class="span6">
+			<div class="col-md-6">
 				<ul class="social-share fixclear">
 					<li class="sc-facebook">
 						<div class="fb-like" data-href="http://facebook.com/alagames" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false" data-font="lucida grande"></div>
@@ -64,7 +64,7 @@ defined( '_GOOFY' ) or die();
 		</div><!-- end row -->
 		
 		<div class="row">
-			<div class="span12">
+			<div class="col-md-12">
 				<div class="bottom fixclear">
 					<ul class="social-icons fixclear">
 						<li class="title">GET SOCIAL</li>

@@ -146,7 +146,7 @@ function kly_getTagLine($options=array(), $content='')
 	
 	if (!is_null($text))
 	{
-		$html = '<div class="row"><div class="span12"><div class="keywordbox">'.$text.'</div></div></div><!-- end row // keywords-->';
+		$html = '<div class="row" style="margin-bottom:20px;"><div class="col-md-12"><div class="keywordbox">'.$text.'</div></div></div><!-- end row // keywords-->';
 	}
 
 	return $html;
@@ -266,11 +266,11 @@ function kly_getCircleMore($options=array(), $content='')
 	
 	if (!is_null($title))
 	{
-		$html .= '<div class="row"><div class="span7"><h3 class="m_title" style="margin-top:25px;">'.LINE1;
+		$html .= '<div class="row"><div class="col-md-7"><h3 class="m_title" style="margin-top:25px;">'.LINE1;
 		$html .= $title.'</h3>'.LINE1;
 		$html .= '<p>'.$text.'</p>'.LINE1;
 		$html .= '</div>'.LINE1;
-		$html .= '<div class="span2"><a href="'.$link.'" class="circlehover with-symbol" data-size="" data-position="top-left" data-align="right">'.LINE1;
+		$html .= '<div class="col-md-2"><a href="'.$link.'" class="circlehover with-symbol" data-size="" data-position="top-left" data-align="right">'.LINE1;
 		$html .= '<span class="text">'.$circle.'</span>'.LINE1;
 		$html .= '<span class="symbol"><img src="/themes/Kallyas/images/ok.png" alt=""></span>'.LINE1;
 		$html .= '</a></div></div><!-- end row // circlehover -->'.LINE2;
@@ -284,7 +284,7 @@ function kly_getSlogan($options=array(), $content='')
 	$html = '';
 	
 	$code   = (isset($options['code'])) ? $options['code'] : 'random' ;
-	$size   = (isset($options['size'])) ? $options['size'] : 'span7' ;
+	$size   = (isset($options['size'])) ? $options['size'] : 'col-md-10' ;
 	
 	$content_db = wed_getDBObject('content_main');
 	
@@ -325,7 +325,7 @@ function kly_getSlogan($options=array(), $content='')
 		$html .= '<h3 class="m_title" style="margin-top:25px;">'.$title.'</h3>'.LINE1;
 		$html .= $text.LINE1;
 		$html .= '</div>'.LINE1;
-		$html .= '<div class="span2"><a href="'.$link.'" class="circlehover with-symbol" data-size="" data-position="top-left" data-align="right">'.LINE1;
+		$html .= '<div class="col-md-2"><a href="'.$link.'" class="circlehover with-symbol" data-size="" data-position="top-left" data-align="right">'.LINE1;
 		$html .= '<span class="text">'.$circle.'</span>'.LINE1;
 		$html .= '<span class="symbol"><img src="/themes/Kallyas/images/ok.png" alt=""></span>'.LINE1;
 		$html .= '</a></div></div><!-- end row // circlehover -->'.LINE2;
@@ -600,7 +600,7 @@ function kly_getHoverBox($options=array(), $content='')
 		$span     = (isset($options['span'])) ? $options['span'] : '4' ;
 		
 		$image_path = '/files/images/icons/60_60/'.$image;
-		$span_class = 'span'.$span;
+		$span_class = 'col-md-'.$span;
 		
 		$html  = '<div class="'.$span_class.'"><a href="'.$link.'" class="hover-box-green fixclear"><img src="'.$image_path.'" alt=""><h3>'.$title.'</h3>
 	<h4>'.$subtitle.'</h4><p>'.$content.'</p></a></div>';

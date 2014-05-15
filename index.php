@@ -10,6 +10,11 @@ $body       = wed_getSystemValue('BODY_HTML');
 $body_html  = '<body class="{{BODY_CLASS}}">'.LINE1;
 $body_html .= $body.LINE1;
 $body_html .= '</body>'.LINE1;
+
+presentation type="content" code="news_video_intro"
+<hr>
+search code="Kallyas-sortable" search_type="FeatureList" call="feature"
+<hr>
 */
 
 ?>
@@ -77,7 +82,7 @@ $body_html .= '</body>'.LINE1;
 	
 	<div id="page_wrapper">
 	
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
 		
 		{[parts/part_slider_layer.php]}
 		
@@ -89,13 +94,14 @@ $body_html .= '</body>'.LINE1;
 			
 			<div class="row">
 		
-				<div class="span9">
+				<div class="col-md-9">
 					
 					[presentation type="content" code="<?php echo $page_code; ?>" /]
 					
 					<hr>
-
+					
 					[presentation type="content" code="news_video_intro" /]
+					
 					[search code="Kallyas-sortable" search_type="FeatureList" call="feature" /]
 					
 					<hr>
@@ -104,7 +110,7 @@ $body_html .= '</body>'.LINE1;
 	
 				</div><!-- end span9 -->
 	
-				<div class="span3">
+				<div class="col-md-3">
 	
 					{[parts/part_sidebar.php:type=right]}
 					

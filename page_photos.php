@@ -87,7 +87,7 @@ else
 	
 	<div id="page_wrapper">
 	
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
 		
 		{[parts/part_static_header.php]}
 	
@@ -97,7 +97,7 @@ else
 	
 				<div class="row">
 	
-					<div class="span12">
+					<div class="col-md-12">
 	
 						[gallery setup="gallery_simple" size="1200_500" crop_size="380_160" heading="{{GROUP_TITLE}} Banner Gallery" /]
 						[gallery setup="gallery_simple" size="general" crop_size="220_140" heading="{{GROUP_TITLE}} General Gallery" /]

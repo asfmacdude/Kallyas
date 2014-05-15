@@ -7,40 +7,6 @@ var domainroot="http://hogash.com/demo/kalypso_html/"; // Specify your domain be
 var hasChaser = 0;			// Enable Chaser menu (open on scroll) ?   1 - Yes / 0 - No
 
 ;(function($){
-	
-	if(hasChaser == 1) {
-		$(window).load(function(){
-			var doc = $(document), 
-				win = $(window), chaser, forch,
-				forchBottom, visible;
-			function shown() { visible = true; }
-			function hidden() { visible = false; }
-			
-			
-			
-			chaser = $('#main_menu ul.sf-menu').clone().hide()
-				.appendTo(document.body)
-				.wrap("<div class='chaser'><div class='container'><div class='row'><div class='span12'></div></div></div></div>");
-				
-			$('.chaser ul.sf-menu').supersubs({ minWidth: 12, maxWidth: 27, extraWidth: 1}).superfish({delay:250, dropShadows:false, autoArrows:true, speed:300});
-			
-			forch = $('#content').first();
-			forchBottom = forch.offset().top + 2;
-			hidden();
-			win.on('scroll', function () {
-				var top = doc.scrollTop();
-				if (!visible && top > forchBottom) {
-					//chaser.slideDown(300, shown);
-					chaser.fadeIn(300, shown);
-				} else if (visible && top < forchBottom) {
-					//chaser.../page_test.phpslideUp(200, hidden);
-					chaser.fadeOut(200, hidden);
-				}
-			});
-			/* Activate Superfish Menu for Chaser */
-			/* $('.chaser ul.sf-menu').supersubs({ minWidth: 12, maxWidth: 27, extraWidth: 1}).superfish({delay:250, dropShadows:false, autoArrows:true, speed:300}); */
-		});
-	}
 
 	$(document).ready(function(e) {
 		
@@ -51,18 +17,7 @@ var hasChaser = 0;			// Enable Chaser menu (open on scroll) ?   1 - Yes / 0 - No
 		var sfDelay = 200;
 		if($('html').hasClass('isie'))
 			sfDelay = 300;
-		$('#main_menu > ul')
-		.supersubs({ 
-            minWidth:    12,   // minimum width of sub-menus in em units 
-            maxWidth:    27,   // maximum width of sub-menus in em units 
-            extraWidth:  1     // extra width can ensure lines don't sometimes turn over 
-        }).superfish({
-			delay:sfDelay,
-			dropShadows:false,
-			autoArrows:true,
-			speed:300
-		});
-		
+				
 		// --- search panel
 		var searchBtn = $('#search').children('.searchBtn'),
 			searchPanel = searchBtn.next(),
@@ -149,7 +104,7 @@ var hasChaser = 0;			// Enable Chaser menu (open on scroll) ?   1 - Yes / 0 - No
 		$('*[data-rel="tooltip"], *[rel="tooltip"]').tooltip();
 		
 		//activate collapsible accordions
-		$(".collapse").collapse();
+		// $(".collapse").collapse();
 
 		// LOAD DATA INTO THE CURRENT-DATE DIV
 		$.ajax({

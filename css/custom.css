@@ -24,6 +24,36 @@ section#content {
 	margin-top: 20px;
 }
 
+/*
+navbar changes
+*/
+
+.navbar-inverse { 
+	background:rgba(0,0,0,0.85); 
+}
+
+.navbar-nav > li > a {
+	font-weight: bold;
+}
+
+.navbar-brand {
+	float: left;
+	padding: 5px 5px;
+}
+
+.navbar-brand img {
+	background-color: rgba(0,0,0,0.15);
+	padding-bottom: 5px;
+	border-bottom: 1px solid black; 
+	height: 70px;
+}
+
+@media (max-width: 767px) {
+	.navbar-brand {
+		display: none;
+	}
+}
+
 
 /*
 Alternate Breadcrumb styling

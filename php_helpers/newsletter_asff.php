@@ -11,9 +11,9 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . PHP_EOL;
 $headers .= "From: $email" . PHP_EOL;
 $headers .= "Reply-To: $email" . PHP_EOL;
 
-$subject = 'ASF Foundation Newsletter';
+$subject = 'Thank you!';
 
-$msg     = include 'newsletter_template.php';
+$msg     = 'Thank you!'; // include 'newsletter_template.php';
 
 mail($email, $subject, $msg, $headers);
 

@@ -52,6 +52,14 @@ class kallyas_assets extends wed_theme_tools
 			'KEY'  => 'JS_FILES_TOP',
 			'TYPE' => 'LIBRARY',
 			'PATH' => 'jquery/jquery.js');
+		
+		$js_array[] = array(
+			'ID'   => 'BOOTSTRAP',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'bootstrap/js/bootstrap.js');
+			
 		$js_array[] = array(
 			'ID'   => 'JQUERY-MIGRATE',
 			'LOAD' => true,
@@ -76,29 +84,62 @@ class kallyas_assets extends wed_theme_tools
 			'KEY'  => 'JS_GOOGLE_ANALYTIC',
 			'TYPE' => 'LIST',
 			'TAG'  => 'GOOGLE-ANALYTIC');
+/*
 		$js_array[] = array(
 			'ID'   => 'NOCONFLICT',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES_TOP',
 			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/jquery.noconflict.js');	
+			'PATH' => $theme . '/js/jquery.noconflict.js');
+*/
+	
 		$js_array[] = array(
-			'ID'   => 'BOOT',
+			'ID'   => 'MEGAMENU',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES',
-			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/bootstrap.min.js');
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'megamenu/js/bootstrap-hover-dropdown.js');
+		$js_array[] = array(
+			'ID'   => 'DROPDOWN-READY',
+			'LOAD' => true,
+			'KEY'  => 'JS_READY_CODE',
+			'TYPE' => 'SCRIPT',
+			'SCRIPT' => "jQuery(document).ready(function($) { $('.dropdown-toggle').dropdownHover().dropdown();$(document).on('click', '.fhmm .dropdown-menu', function(e) {e.stopPropagation() }) });");
+		$js_array[] = array(
+			'ID'   => 'FITVIDS',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'jquery/jquery.fitvids.js');
+		
+		$js_array[] = array(
+			'ID'   => 'FITVIDREADY',
+			'LOAD' => true,
+			'KEY'  => 'JS_READY_CODE',
+			'TYPE' => 'SCRIPT',
+			'SCRIPT' => "jQuery(document).ready(function($) { $('.fhmm').fitVids(); });");
+	
+		$js_array[] = array(
+			'ID'   => 'TWITTERWIDGETS',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'CDN',
+			'PATH' => 'http://platform.twitter.com/widgets.js');
+			
+			
 		$js_array[] = array(
 			'ID'   => 'PLUGINS',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/js/plugins.js');
-		$js_array[] = array(
+		/*
+$js_array[] = array(
 			'ID'   => 'SUPERFISH',
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/addons/superfish_responsive/superfish_menu.js');
+*/
 		/*
 $js_array[] = array(
 			'ID'   => 'SUPERFISH',
@@ -189,7 +230,7 @@ $js_array[] = array(
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
-			'PATH' => $theme . '/js/kalypso_wed.js');
+			'PATH' => $theme . '/js/kalypso_wed_test.js');
 		$js_array[] = array(
 			'ID'   => 'CUSTOM',
 			'LOAD' => true,
@@ -231,14 +272,28 @@ $js_array[] = array(
 		$theme = $this->options['THEME'];
 		
 		$css_array   = array();
+		
 		$css_array[] = array(
 			'ID'    => 'BOOT',
 			'LOAD'  =>  true,
-			'PATH'  =>$theme . '/css/bootstrap.css');
+			'TYPE'  => 'LIBRARY',
+			'PATH'  => 'bootstrap/css/bootstrap.css');
+		$css_array[] = array(
+			'ID'    => 'MEGAMENU',
+			'LOAD'  =>  true,
+			'TYPE'  => 'LIBRARY',
+			'PATH'  => 'megamenu/css/fhmm.css');
+		$css_array[] = array(
+			'ID'    => 'FONTAWESOME',
+			'LOAD'  =>  true,
+			'TYPE'  => 'LIBRARY',
+			'PATH'  => 'megamenu/css/font-awesome.min.css');
+			
+			
 		$css_array[] = array(
 			'ID'    => 'TEMPLATE',
 			'LOAD'  =>  true,
-			'PATH'  => $theme . '/css/template.css');
+			'PATH'  => $theme . '/css/template_new.css');
 		$css_array[] = array(
 			'ID'    => 'UPDATE',
 			'LOAD'  =>  true,
@@ -268,6 +323,21 @@ $css_array[] = array(
 			'PATH'  => $theme . '/css/custom.css');
 		
 		return $css_array;
+	}
+	
+	public function getFormats($name=null)
+	{
+		$formats = array();
+		
+		$formats['top_menu'] = array(
+			'TOP_NOSUB' => '<li class="%LI_CLASS%"><a href="%LINK%">%TITLE%</a></li>',
+			'TOP_SUB'   => '<li class="dropdown %LI_CLASS%"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i> %TITLE% <b class="caret"></b></a><ul class="dropdown-menu">%SUB_MENU%</ul></li>',
+			'SUB'       => '<li><a href="%LINK%">%TITLE%</a></li>',
+			'ACTIVE_CLASS' => ' active',
+			'START_CLASS'  => null
+			);
+		
+		return ((!is_null($name)) && (isset($formats[$name]))) ? $formats[$name] : array() ;
 	}
 }
 ?>

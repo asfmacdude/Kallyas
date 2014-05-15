@@ -66,7 +66,7 @@ defined( '_GOOFY' ) or die();
     
 	<div id="page_wrapper">
 
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
         
 		<div id="slideshow">
 	        
@@ -87,11 +87,11 @@ defined( '_GOOFY' ) or die();
 				<div id="mainbody">
 					
 					<div class="row">
-						<div class="span12">
+						<div class="col-md-12">
 							<h1 class="page-title">Contact Us</h1>
 							
 							<div class="row">
-								<div class="span6">
+								<div class="col-md-6">
 									<p>Use this form to send us a message:</p>
 									<div id="contact_form" class="rapid_contact ">
 										<form action="#" method="post" class="form-horizontal">
@@ -130,7 +130,7 @@ defined( '_GOOFY' ) or die();
 									</div><!-- end contact form -->
 								</div><!-- end left side -->
 
-								<div class="span6">
+								<div class="col-md-6">
 									<h3>Get in touch with us</h3>
 
 									<div class="qrCode" style="float:right; margin:0px 0px 15px 15px; width:160px; " >
@@ -160,7 +160,8 @@ defined( '_GOOFY' ) or die();
 		</section><!-- end #content -->
 
         
-{[parts/part_footer.php]}
+		{[parts/part_footer.php]}
+		{[parts/part_bottom_code.php]}
         
     </div><!-- end page_wrapper -->
 	

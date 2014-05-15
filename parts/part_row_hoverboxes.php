@@ -5,7 +5,7 @@ $hover_row_html = null;
 $sport          = null;
 
 $call_parts   = wed_getSystemValue('CALL_PARTS');
-$html_format  = '<div class="span4"><a href="%LINK%" class="hover-box fixclear"><img src="%IMAGE%" alt=""><h3>%TITLE%</h3>
+$html_format  = '<div class="col-md-4"><a href="%LINK%" class="hover-box fixclear"><img src="%IMAGE%" alt=""><h3>%TITLE%</h3>
 	<h4>{{GROUP_TITLE}}</h4><p>%TEXT%</p></a></div>';
 $html_wrapper = '<div class="row">%CONTENT%</div>';
 

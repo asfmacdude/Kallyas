@@ -76,7 +76,7 @@ $page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
 	
 	<div id="page_wrapper">
 	
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
 		
 		{[parts/part_static_header.php:shadow=no]}
 		
@@ -88,10 +88,10 @@ $page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
 	
 				<div class="row">
 	
-					<div class="span9">
+					<div class="col-md-9">
 						
 						[presentation type="content" code="general_register" format="snippet" /]
-						[presentation type="content" code="<?php echo $page_code; ?>_register" format="snippet" /]
+						[presentation type="content" code="<?php echo $page_code; ?>_register" /]
 						
 						<hr>
 						
@@ -99,7 +99,7 @@ $page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
 	
 					</div><!-- end span9 -->
 	
-					<div class="span3">
+					<div class="col-md-3">
 	
 						{[parts/part_sidebar.php:type=right]}
 						

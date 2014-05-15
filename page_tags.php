@@ -72,7 +72,7 @@ defined( '_GOOFY' ) or die();
 	
 	<div id="page_wrapper">
 	
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
 		
 		{[parts/part_static_header.php]}
 	
@@ -82,7 +82,7 @@ defined( '_GOOFY' ) or die();
 	
 				<div class="row">
 	
-					<div class="span9">
+					<div class="col-md-9">
 						
 						[search search_type="ContentTags" type="search" heading="Search Listing - Tags" /]
 						
@@ -92,7 +92,7 @@ defined( '_GOOFY' ) or die();
 	
 					</div><!-- end span9 -->
 	
-					<div class="span3">
+					<div class="col-md-3">
 	
 						{[parts/part_sidebar.php:type=right]}
 						

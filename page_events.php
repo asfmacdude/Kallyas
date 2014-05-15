@@ -87,7 +87,7 @@ else
 	
 	<div id="page_wrapper">
 	
-		{[parts/part_header.php]}
+		{[parts/part_headermenu.php]}
 		
 		{[parts/part_slider_layer.php]}
 		
@@ -99,13 +99,13 @@ else
 	
 				<div class="row">
 	
-					<div class="span3">
+					<div class="col-md-3">
 	
 						{[parts/part_sidebar.php:type=left]}
 						
 					</div><!-- end span3 -->
 					
-					<div class="span9">
+					<div class="col-md-9">
 	
 						<?php echo $page_html; ?>
 	
