@@ -46,8 +46,11 @@ $list_setup['CONTAINER']    = <<<ENDHTML
 ENDHTML;
 
 // IMAGE only template which will be inserted into the ITEM
+//
+// data-rel="prettyPhoto" data-type="%TYPE%"
+// 
 $list_setup['IMAGE'] = <<<ENDHTML
-<a href="%OBJECT_LINK%" data-rel="prettyPhoto" data-type="%TYPE%" class="hoverLink thumbnail" >
+<a href="%OBJECT_LINK%" class="hoverLink thumbnail lightbox" >
 	<img src="%IMAGE_PATH%" alt="" />
 </a>
 ENDHTML;

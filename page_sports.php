@@ -81,8 +81,6 @@ else
 </head>
 
 <body class="{{BODY_CLASS}}">
-
-	{[parts/part_supportpanel.php]}
 	
 	<div id="page_wrapper">
 	
@@ -90,11 +88,15 @@ else
 		
 		{[parts/part_slider_layer.php]}
 		
+		<!-- parts/part_static_header.php -->
+		
 		{[parts/part_actionbox.php]}
 	
 		<section id="content">
 		
 			<div class="container">
+			
+				{[parts/part_partners_carousel.php]}
 				
 				[presentation type="content" code="URL_registerbuttons" format="snippet" show_error=0 /]
 				
@@ -107,6 +109,10 @@ else
 						<div style="clear:both;"></div>
 						
 						<?php echo $page_html; ?>
+						
+						<div style="clear:both;"></div>
+						
+						[content code="hospitality" format="section"]
 	
 					</div><!-- end span9 -->
 	

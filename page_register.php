@@ -10,7 +10,19 @@ defined( '_GOOFY' ) or die();
 
 $page_code  = wed_getSystemValue('HOME_PAGE_CONTENT');
 $call_parts = wed_getSystemValue('CALL_PARTS');
-$page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
+$page_code  = (!empty($call_parts[1])) ? $call_parts[1] : null ;
+
+if (is_null($page_code))
+{
+	header('Location: /sport');
+	exit();
+}
+else
+{
+	$page_html = '[presentation type="content" code="general_intro" format="snippet" /]';
+	$page_html .= '[presentation type="content" code="'.$page_code.'"  /]';
+}
+
 ?>
 
 <!doctype html>
@@ -71,8 +83,6 @@ $page_code  = (!empty($call_parts[1])) ? $call_parts[1] : $page_code ;
 </head>
 
 <body class="{{BODY_CLASS}}">
-
-	{[parts/part_supportpanel.php]}
 	
 	<div id="page_wrapper">
 	

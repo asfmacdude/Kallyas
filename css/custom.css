@@ -55,6 +55,17 @@ navbar changes
 }
 
 
+.img-left {
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.img-right {
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+
 /*
 Alternate Breadcrumb styling
 */
@@ -109,7 +120,24 @@ Green Hover-box
 .hover-box-green > p {margin-bottom:0;line-height: 1.1;}
 
 
+.bracket_sport {
+	color: white;
+	font-size: larger;
+	font-weight: bold;
+	background-color:rgb(50, 50, 50);
+}
 
+.bracket_division {
+	font-size: larger;
+	font-weight: bold;
+	background-color:rgb(150, 150, 150);
+}
+
+.bracket_date {
+	font-style: italic;
+	font-weight: bold;
+	background-color:rgb(200, 200, 200);
+}
 
 
 /*

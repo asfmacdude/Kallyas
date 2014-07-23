@@ -41,14 +41,83 @@ $animator->newAnimationByCode($social);
 
 $social_html = $animator->getHTML(array('SLIDER_ID' => 'social'));
 
+// <div class="widget">
+// <?php echo $social_html; </div>
+
 ?>
 
 
 <div id="sidebar" class="<?php echo $sidebar_type; ?>">							
 	
 	<div class="widget">
-		<?php echo $social_html; ?>
+		<h4 class="title">Connect with Us...</h4>
+		<?php echo $social_html;?>
 	</div>
+	
+	<div class="widget">
+		[image path="openceremony/sidebar/2014_open_fireworks.jpg" /]
+	</div>
+	
+	<div class="widget">
+		<h4 class="title">Special Events...</h4>
+		<ul class="menu">
+			<li>
+				<a href="http://weecanfightobesity.us">
+					<strong>2014 Physical Education & Health Summer Conference</strong><br>
+					Sponsored by the ASF Foundation<br>
+					July 30 - August 1
+				</a>
+			</li>
+			<li>
+				<a href="http://seniorstategames.asffoundation.net">
+					<strong>Alabama Nursing Home Association<br>
+					Senior State Games</strong><br>
+				</a>
+			</li>
+			<li>
+				<a href="http://alagames.net/sport/adapted">
+					<strong>Adapted State Games</strong>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="widget">
+		<h4 class="title">Support Our Patrons...</h4>
+		<ul class="menu">
+			<li>
+				<a href="http://alagames.net/about/patrons">
+					Title and Major Patrons
+				</a>
+			</li>
+			<li>
+				<a href="http://alagames.net/about/hospitality">
+					Hospitality Patrons
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="widget">
+		<h4 class="title">2014 Venue Map...</h4>
+		<ul class="menu">
+			<li>
+				<a href="/files/documents/forms/VenueMap2014.pdf">
+					Download the 2014 Venue Map
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="widget">
+		<h4 class="title">More Information...</h4>
+		<?php echo wed_getPresentation($menu_specs); ?>
+	</div><!-- end widget -->
+	
+	<div class="widget">
+		<h4 class="title">Other Programs...</h4>
+		<?php echo wed_getPresentation($prog_specs); ?>
+	</div><!-- end widget -->
 	
 	<div class="widget">
 		<a href="http://asffoundation.net/about/asffoundation" class="hover-box centered fixclear">
@@ -57,16 +126,6 @@ $social_html = $animator->getHTML(array('SLIDER_ID' => 'social'));
 			<p>Watch the new video, "We Mentor. We Lead. We Impact."</p>
 		</a>
 	</div>
-	
-	<div class="widget">
-		<h4 class="title">Other Programs...</h4>
-		<?php echo wed_getPresentation($prog_specs); ?>
-	</div><!-- end widget -->
-	
-	<div class="widget">
-		<h4 class="title">More Information...</h4>
-		<?php echo wed_getPresentation($menu_specs); ?>
-	</div><!-- end widget -->
 	
 	<div class="widget">
 		<?php echo wed_getPresentation($ad_specs); ?>

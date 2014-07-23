@@ -10,7 +10,6 @@
 
 $codes = array();
 $codes['page_wrapper']         = 'kly_getPageWrapper';
-// $codes['content']              = 'kly_getContentWrapper';
 $codes['row']                  = 'kly_getRowWrapper';
 $codes['grid']                 = 'kly_getGridWrapper';
 $codes['column']               = 'kly_getColumn';
@@ -26,6 +25,7 @@ $codes['register_mail_button'] = 'kly_getRegisterMailButton';
 $codes['show_map']             = 'kly_showMap';
 $codes['button']               = 'kly_showButton';
 $codes['results']              = 'kly_showResults';
+$codes['brackets']             = 'kly_showBrackets';
 $codes['countdown']            = 'kly_getCountdown';
 $codes['breadcrumb']           = 'kly_getBreadcrumb';
 $codes['gallery_sampler']      = 'kly_getGallerySampler';
@@ -44,23 +44,6 @@ function kly_getPageWrapper($options=array(), $content='')
 	$html .= '</div><!-- end page_wrapper -->'.LINE2;
 	
 	return $html;
-}
-
-function kly_getContentWrapper($options=array(), $content='')
-{
-	$theme = wed_getSystemValue('THEME');
-	$file  = THEME_BASE . $theme . DS .'parts/part_content.php';
-	$html  = '';
-	
-	if (file_exists($file))
-	{
-		ob_start();
-		@include $file;
-		$html = ob_get_contents();
-		ob_end_clean();
-	}
-	
-	return str_replace('%CONTENT%', $content, $html);
 }
 
 function kly_getRowWrapper($options=array(), $content='')
@@ -356,7 +339,7 @@ function kly_getRegisterButton($options=array(), $content='')
 	if (!wed_getMomentInTime($options))
 	{
 		$html .= '<h4>'.'Online Registration is Closed for '.$sport.'.</h4>'.LINE1;
-		$html .= '<p>The deadline date for registration has passed. Please contact our office for more information.</p>';
+		$html .= '<p>The deadline date for online registration has passed. Please contact our office for more information.</p>';
 		return $html;
 	}
 	
@@ -398,10 +381,10 @@ function kly_getRegisterMailButton($options=array(), $content='')
 		return null;
 	}
 	
-	if (!wed_getMomentInTime($start,$end))
+	if (!wed_getMomentInTime($options))
 	{
-		$html .= '<h4>'.'Registration is Closed for '.$sport.'.</h4>'.LINE1;
-		$html .= '<p>The deadline date for registration has passed. Please contact our office for more information.</p>';
+		$html .= '<h4>'.'Registration by mail is Closed for '.$sport.'.</h4>'.LINE1;
+		$html .= '<p>The deadline date for registering by mail has passed. Please contact our office for more information.</p>';
 		return $html;
 	}
 	
@@ -489,13 +472,48 @@ function kly_showButton($options=array(), $content='')
 
 function kly_showResults($options=array(), $content='')
 {	
-	$sport   = (isset($options['sport'])) ? $options['sport'] : 'ALL' ;
-	$year    = (isset($options['year'])) ? $options['year'] : '2012' ;
+	$html       = '<p>No Results Available</p>';
+	$call_parts = wed_getSystemValue('CALL_PARTS');
+	$sport      = (isset($call_parts[1])) ? $call_parts[1] : null;
 	
-	$file    = 'http://www.alagames.com/results-online/index.php?sport='.$sport.'&year='.$year;
-	$curlobj = wed_getCurlObject(array('URL'=>$file));
+	if (!is_null($sport))
+	{
+		$groupDb = wed_getDBObject('content_groups');
+		
+		if ($groupDb->checkGroupSysName($sport))
+		{
+			$sport    = $groupDb->getValue('code');
+			$year_now = date('Y');
+			$year     = (isset($options['year'])) ? $options['year'] : $year_now ;
+			$file     = 'http://www.alagames.com/results-online/index.php?sport='.$sport.'&year='.$year;
+			$curlobj  = wed_getCurlObject(array('URL'=>$file));
+			$html     = $curlobj->getOutput();			
+		}
+	}
 	
-	return $curlobj->getOutput();
+	return $html;
+}
+
+function kly_showBrackets($options=array(), $content='')
+{	
+	$html       = null;
+	$call_parts = wed_getSystemValue('CALL_PARTS');
+	$sport      = (isset($call_parts[1])) ? $call_parts[1] : null;
+	
+	if (!is_null($sport))
+	{
+		$groupDb = wed_getDBObject('content_groups');
+		
+		if ($groupDb->checkGroupSysName($sport))
+		{
+			$sport    = $groupDb->getValue('code');
+			$file     = 'http://www.alagames.com/brackets-online/index.php?sport='.$sport;
+			$curlobj  = wed_getCurlObject(array('URL'=>$file));
+			$html     = $content.$curlobj->getOutput();			
+		}
+	}
+	
+	return $html;
 }
 
 function kly_getCountdown($options=array(), $content='')

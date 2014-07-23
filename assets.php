@@ -105,6 +105,36 @@ class kallyas_assets extends wed_theme_tools
 			'KEY'  => 'JS_READY_CODE',
 			'TYPE' => 'SCRIPT',
 			'SCRIPT' => "jQuery(document).ready(function($) { $('.dropdown-toggle').dropdownHover().dropdown();$(document).on('click', '.fhmm .dropdown-menu', function(e) {e.stopPropagation() }) });");
+		
+		/*
+$js_array[] = array(
+			'ID'   => 'LIGHTBOXA',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'nacho_lightbox/js/jquery.hammer.min.js');
+		$js_array[] = array(
+			'ID'   => 'LIGHTBOXB',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'nacho_lightbox/js/jquery.nchlightbox-1.2.min.js');
+*/
+			
+		$js_array[] = array(
+			'ID'   => 'EVOLUTION',
+			'LOAD' => true,
+			'KEY'  => 'JS_FILES',
+			'TYPE' => 'LIBRARY',
+			'PATH' => 'evolution/jquery.lightbox.min.js');
+		$js_array[] = array(
+			'ID'   => 'EVOLUTIONREADY',
+			'LOAD' => true,
+			'KEY'  => 'JS_READY_CODE',
+			'TYPE' => 'SCRIPT',
+			'SCRIPT' => "jQuery(document).ready(function($) { $('.lightbox').lightbox();});");		
+			
+			
 		$js_array[] = array(
 			'ID'   => 'FITVIDS',
 			'LOAD' => true,
@@ -152,12 +182,16 @@ $js_array[] = array(
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/addons/superfish_responsive/supersubs.js');
 */
-		$js_array[] = array(
+
+		/*
+$js_array[] = array(
 			'ID'   => 'PRETTY',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/addons/prettyphoto/jquery.prettyPhoto.js');
+*/
+
 		$js_array[] = array(
 			'ID'   => 'IOSSLIDERA',
 			'KEY'  => 'JS_FILES',
@@ -231,12 +265,14 @@ $js_array[] = array(
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/js/kalypso_wed_test.js');
-		$js_array[] = array(
+		/*
+$js_array[] = array(
 			'ID'   => 'CUSTOM',
 			'LOAD' => true,
 			'KEY'  => 'JS_FILES',
 			'TYPE' => 'FILE',
 			'PATH' => $theme . '/js/wed_custom.js');
+*/
 		$js_array[] = array(
 			'ID'   => 'FORMS',
 			'LOAD' => true,
@@ -288,6 +324,20 @@ $js_array[] = array(
 			'LOAD'  =>  true,
 			'TYPE'  => 'LIBRARY',
 			'PATH'  => 'megamenu/css/font-awesome.min.css');
+		
+		/*
+$css_array[] = array(
+			'ID'    => 'NACHOLIGHTBOX',
+			'LOAD'  =>  true,
+			'TYPE'  => 'LIBRARY',
+			'PATH'  => 'nacho_lightbox/css/nchlightbox-1.2.css');
+*/
+			
+		$css_array[] = array(
+			'ID'    => 'EVOLUTION',
+			'LOAD'  =>  true,
+			'TYPE'  => 'LIBRARY',
+			'PATH'  => 'evolution/themes/default/jquery.lightbox.css');
 			
 			
 		$css_array[] = array(
@@ -302,13 +352,20 @@ $js_array[] = array(
 			'ID'    => 'RESPONSIVE',
 			'LOAD'  =>  true,
 			'PATH'  => $theme . '/css/responsive-devices.css');
-		$css_array[] = array(
+		
+		/*
+$css_array[] = array(
 			'ID'    => 'SUPERFISH',
 			'PATH'  => $theme . '/addons/superfish_responsive/superfish.css');
-		$css_array[] = array(
+*/
+			
+		/*
+$css_array[] = array(
 			'ID'    => 'PRETTY',
 			'LOAD'  =>  true,
 			'PATH'  => $theme . '/addons/prettyphoto/prettyPhoto.css');
+*/
+		
 		$css_array[] = array(
 			'ID'    => 'IOSSLIDER',
 			'PATH'  => $theme .'/sliders/iosslider/style.css');

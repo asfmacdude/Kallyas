@@ -1,10 +1,12 @@
+/*
 function ppOpen(panel, width){
 	jQuery.prettyPhoto.close();
 	setTimeout(function() {
 		jQuery.fn.prettyPhoto({social_tools: false, deeplinking: false, show_title: false, default_width: width, theme:'pp_kalypso'});
 		jQuery.prettyPhoto.open(panel);
 	}, 300);
-} // function to open different panel within the panel
+}
+*/ // function to open different panel within the panel
 	
 jQuery(document).ready(function($) {
 	jQuery("a[data-rel^='prettyPhoto'], .prettyphoto_link").prettyPhoto({theme:'pp_kalypso',social_tools:false, deeplinking:false});
